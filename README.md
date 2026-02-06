@@ -1,5 +1,3 @@
-[![Installation Testing](https://github.com/marianne-m/brouhaha-vad/actions/workflows/setup.yml/badge.svg)](https://github.com/marianne-m/brouhaha-vad/actions/workflows/setup.yml)
-
 # Brouhaha: multi-task training for voice activity detection, speech-to-noise ratio, and C50 room acoustics estimation (2023)
 
 ![](doc/brouhaha.png)
@@ -10,34 +8,27 @@ You'll find the instructions to install and run our pretrained model. Given an a
 - Speech-to-Noise Ratio (SNR) , that measures the speech level compared to the noise level
 - C50, that measures to which extent the environment is reverberant
 
-You can listen to some audio samples we generated to train the model [here](https://marvinlvn.github.io/projects/1_project/).
+You can listen to some audio samples we generated to train the model [here](https://marvinlvn.github.io/projects/brouhaha/).
 
 If you want to dig further, you'll also find the instructions to run the audio contamination pipeline, and retrain a model from scratch.
 
 ### Installation
 
-```
+```bash
 # clone brouhaha
-git clone https://github.com/marianne-m/brouhaha-vad.git
-cd brouhaha-vad
+git clone https://github.com/arxaqapi/brouhaha.git
+cd brouhaha
 
-# creating a conda environment
-conda create -n brouhaha python=3.8
-conda activate brouhaha
-
-# install brouhaha
-pip install .
+# install dependencies and brouhaha with uv
+uv sync
 ```
 
-Depending on the environment you're running the model in, it may be necessary to install libsndfile with the following command:
-```
-conda install -c conda-forge libsndfile
-```
+Depending on the environment you're running the model in, it may be necessary to install `libsndfile`.
 
 ### Extract predictions
 
 ```
-python brouhaha/main.py apply \
+uv run src/brouhaha/main.py apply \
       --data_dir path/to/data \
       --out_dir path/to/predictions \
       --model_path models/best/checkpoints/best.ckpt \

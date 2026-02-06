@@ -1,0 +1,40 @@
+[project]
+name = "brouhaha"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Marianne Métais" },
+    { name = "Marvin Lavechin" },
+]
+requires-python = ">=3.10"
+keywords = ["voice-activity-detection", "speech-to-noise-ratio", "room-acoustics", "pyannote"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering"
+]
+
+dependencies = [
+    "numpy==1.24.4",
+    "pandas==2.1.0",
+    "pyannote-audio==3.3.0",
+    "torch==2.8.0",
+    "torchaudio==2.8.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/marianne-m/brouhaha-vad"
+Repository = "https://github.com/marianne-m/brouhaha-vad"
+Paper = "https://arxiv.org/abs/2210.13248"
+
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"

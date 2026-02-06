@@ -27,7 +27,7 @@ Depending on the environment you're running the model in, it may be necessary to
 
 ### Extract predictions
 
-```
+```bash
 uv run src/brouhaha/main.py apply \
       --data_dir path/to/data \
       --out_dir path/to/predictions \
